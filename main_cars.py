@@ -2,15 +2,17 @@ import cv2
 import numpy as np
 
 # Завантаження попередньо навченої моделі YOLO
-net = cv2.dnn.readNet("yolov3-spp.weights", "yolov3-spp.cfg")
+net = cv2.dnn.readNet("datafiles/yolov3-spp.weights", "datafiles/yolov3-spp.cfg")
 
 # Завантаження назв класів
 classes = []
-with open("coco.names", "r") as f:
+with open("datafiles/coco.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
 
 # Відкриття відеопотоку з машини
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
+# Відкриття відеопотоку з машини з відео
+cap = cv2.VideoCapture('video/car_-_2165 (540p).mp4')
 
 while True:
     ret, frame = cap.read()
