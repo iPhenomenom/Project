@@ -1,0 +1,5 @@
+tensorflow~=2.14.0
+opencv-python~=4.8.1.78
+numpy~=1.26.1
+Pillow==10.1.0
+tf-models-official==2.3.0
